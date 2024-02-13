@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>For Jena 💗</title>
+  </head>
+  <body>
+    <img src="assets/For Jena.png" alt="date?" class="header-img" />
+    <div class="container" id="container" >
+      <img src="assets/roses.gif" alt="please" class="roses" id="rose"/>
+      <img src="assets/clickMe.gif" alt="please" class="clickme" id="hiddenImage" />
+    </div>
+
+    <div class="bodyText">      
+      <div class="text-bottom">
+        <div class="text-mask"></div>
+        You mean the world to me
+      </div>
+    </div>
+    
+    
+    <script>
+      setTimeout(function() {
+        var textContainer = document.querySelector('.text-bottom');
+        textContainer.innerHTML = "I love you 💗";
+        textContainer.style.opacity = 1; // Show the text immediately after changing it
+        textContainer.style.animation = 'fadeIn 1s forwards, scaleIn 2s forwards'; // Apply fadeIn and scaleIn animations
+      }, 3000); // Change text after 3 seconds
+
+      // rose
+      const image = document.getElementById('rose');
+      
+      // Add click event listener to the image
+      image.addEventListener('click', () => {
+        // Fade out the current page
+        document.body.classList.add('hidden');
+        const url = 'ask.html';
+        setTimeout(() => {
+          // Navigate to the new page
+          window.location.href = url;
+        }, 500);
+      });
+
+      // click me
+      // Function to show the hidden image after a delay
+      function showImage() {
+        const image = document.getElementById('hiddenImage');
+        image.style.display = 'inline'; // Show the image
+        // Delay to ensure the display change takes effect before changing opacity
+        setTimeout(() => {
+          image.style.opacity = '1'; // Set opacity to 1 for fade-in effect
+        }, 50); // Adjust the delay as needed
+      }
+
+      // Delay in milliseconds before showing the image
+      const delay = 4000; // 3 seconds
+
+      // Call the showImage function after the specified delay
+      setTimeout(showImage, delay);
+    </script>
+    
+    <script src="main.js"></script>
+  </body>
+</html>
